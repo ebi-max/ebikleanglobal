@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwincy concept</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Kwincy concept</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Kwincy concept</h1>
+            <p>Tagline or Services (e.g., Hair • Makeup • Events)</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Short description about the client business. What they do and their mission.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>Service 1</h3>
+                <p>Short description of Service 1</p>
+            </div>
+            <div class="card">
+                <h3>Service 2</h3>
+                <p>Short description of Service 2</p>
+            </div>
+            <div class="card">
+                <h3>Service 3</h3>
+                <p>Short description of Service 3</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <img src="images/hero.jpg" alt="Hero Image">
+            <img src="images/service1.jpg" alt="Service 1">
+            <img src="images/service2.jpg" alt="Service 2">
+            <img src="images/service3.jpg" alt="Service 3">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact / Book a Service</h2>
+        <p>Phone: 09131625573/09117446453</p>
+        <p>Email: <a href="mailto:kwincyconcept44@email.com">client@email.com</a></p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message / Booking Details" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Built by EbikleanGlobal &copy; 2026</p>
+    </footer>
+</body>
+</html>

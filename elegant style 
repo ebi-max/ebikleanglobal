@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kwincy concept</title>
+    <title>Elegant Styles & Events</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
     <nav>
-        <div class="logo">Kwincy concept</div>
+        <div class="logo">Elegant Styles & Events</div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -23,15 +23,15 @@
     <!-- Home Section -->
     <section id="home" class="hero">
         <div class="hero-text">
-            <h1>Kwincy concept</h1>
-            <p>Tagline or Services (e.g., Hair • Makeup • Events)</p>
+            <h1>Elegant Styles & Events</h1>
+            <p>Hair • Makeup • Bridal • Event Decoration</p>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <h2>About Us</h2>
-        <p>Short description about the client business. What they do and their mission.</p>
+        <p>Elegant Styles & Events provides premium hair styling, makeup, bridal services, and event decoration. We focus on creating unforgettable looks and experiences for every client, ensuring quality, elegance, and professionalism in all we do.</p>
     </section>
 
     <!-- Services Section -->
@@ -39,16 +39,20 @@
         <h2>Our Services</h2>
         <div class="service-cards">
             <div class="card">
-                <h3>Service 1</h3>
-                <p>Short description of Service 1</p>
+                <h3>Hair Styling</h3>
+                <p>Professional hair services including dreadlocks, braiding, and styling for all occasions.</p>
             </div>
             <div class="card">
-                <h3>Service 2</h3>
-                <p>Short description of Service 2</p>
+                <h3>Makeup & Bridal</h3>
+                <p>Bridal and event makeup, personal styling, and glam services to make you shine.</p>
             </div>
             <div class="card">
-                <h3>Service 3</h3>
-                <p>Short description of Service 3</p>
+                <h3>Event Decoration</h3>
+                <p>Decoration services for weddings, birthdays, corporate events, and special occasions.</p>
+            </div>
+            <div class="card">
+                <h3>Special Packages</h3>
+                <p>Custom surprise packages and tailored event planning solutions to create memorable experiences.</p>
             </div>
         </div>
     </section>
@@ -57,18 +61,18 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-            <img src="images/hero.jpg" alt="Hero Image">
-            <img src="images/service1.jpg" alt="Service 1">
-            <img src="images/service2.jpg" alt="Service 2">
-            <img src="images/service3.jpg" alt="Service 3">
+            <img src="images/hero.jpg" alt="Hair Style Example">
+            <img src="images/service1.jpg" alt="Makeup Example">
+            <img src="images/service2.jpg" alt="Event Decoration Example">
+            <img src="images/service3.jpg" alt="Bridal Styling Example">
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact / Book a Service</h2>
-        <p>Phone: 09131625573/09117446453</p>
-        <p>Email: <a href="mailto:kwincyconcept44@email.com">client@email.com</a></p>
+        <p>Phone: 09131625573 / 09117446453</p>
+        <p>Email: <a href="mailto:Kwincyconcept44@gmail.com">Kwincyconcept44@gmail.com</a></p>
         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="_replyto" placeholder="Your Email" required>

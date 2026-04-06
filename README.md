@@ -46,9 +46,9 @@
   <h2>💳 Payment</h2>
   <p>Secure your slot by making payment before processing.</p>
   <div class="card">
-    <p><strong>Bank:</strong> Your Bank Name</p>
+    <p><strong>Bank:</strong> Fidelity Bank</p>
     <p><strong>Account Name:</strong> Ebiklean Global</p>
-    <p><strong>Account Number:</strong> 0000000000</p>
+    <p><strong>Account Number:</strong> 5601698668</p>
   </div>
 </section><section>
   <h2>⭐ Testimonials</h2>

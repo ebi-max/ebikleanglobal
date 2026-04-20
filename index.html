@@ -7,9 +7,7 @@
     body { font-family: Arial, sans-serif; margin:0; background:#f4f6f8; color:#1f2937; }
     header { background:linear-gradient(135deg,#0f172a,#1e3a8a); color:#fff; padding:60px 20px; text-align:center; }
     header h1 { margin:0; font-size:2.4rem; }
-    header p { margin-top:10px; max-width:800px; margin-left:auto; margin-right:auto; }section { max-width:1000px; margin:auto; padding:30px 20px; }
-
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:15px; }
+    section { max-width:1000px; margin:auto; padding:30px 20px; }.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:15px; }
 
 .card { background:#fff; padding:20px; border-radius:14px; box-shadow:0 8px 20px rgba(0,0,0,0.08); }
 
@@ -19,130 +17,163 @@ h2 { color:#0f172a; }
 
 .btn-green { background:#16a34a; }
 
-.tag { display:inline-block; background:#e2e8f0; padding:5px 10px; border-radius:20px; font-size:12px; margin-top:8px; }
-
 .box { background:#fff; padding:20px; border-radius:14px; margin-top:15px; box-shadow:0 8px 20px rgba(0,0,0,0.06); }
 
 footer { text-align:center; padding:30px; background:#0f172a; color:#fff; }
 
 .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:15px; border-radius:50%; text-decoration:none; font-size:20px; }
 
-select, input { width:100%; padding:10px; margin-top:8px; border-radius:8px; border:1px solid #ccc; }
+input { width:100%; padding:10px; margin-top:8px; border-radius:8px; border:1px solid #ccc; }
 
-.hidden { display:none; }
+.admin { display:none; background:#111827; color:#fff; padding:20px; margin-top:20px; border-radius:14px; }
+
+.admin-item { background:#1f2937; padding:10px; margin-bottom:10px; border-radius:10px; }
+
+.small-btn { padding:6px 10px; font-size:12px; background:#ef4444; border:none; color:#fff; border-radius:8px; cursor:pointer; }
 
   </style>
 </head>
 <body><header>
   <h1>Ebiklean Global</h1>
-  <p>Business registration, cleaning services, laundry, waste management, and digital support services in one platform.</p>
 </header><section>
   <div class="box">
-    <h2>Select a Service</h2><div class="grid">
+    <h2>Select Service</h2><div class="grid">
   <div class="card">
     <h3>CAC Registration</h3>
-    <p>Business registration with CAC</p>
-    <span class="tag">₦10,000</span>
     <button class="btn" onclick="selectService('CAC Registration',10000)">Choose</button>
   </div>
 
   <div class="card">
     <h3>NGO Registration</h3>
-    <p>Non-profit registration</p>
-    <span class="tag">₦35,000</span>
     <button class="btn" onclick="selectService('NGO Registration',35000)">Choose</button>
   </div>
 
   <div class="card">
     <h3>Interior Cleaning</h3>
-    <p>Home & office cleaning</p>
-    <span class="tag">Custom Price</span>
     <button class="btn" onclick="selectService('Interior Cleaning',0)">Choose</button>
   </div>
 
   <div class="card">
-    <h3>Laundry Services</h3>
-    <p>Washing & ironing</p>
-    <span class="tag">Affordable</span>
-    <button class="btn" onclick="selectService('Laundry Services',0)">Choose</button>
+    <h3>Laundry</h3>
+    <button class="btn" onclick="selectService('Laundry',0)">Choose</button>
   </div>
 
   <div class="card">
     <h3>Waste Management</h3>
-    <p>Environmental services</p>
-    <span class="tag">Eco-friendly</span>
     <button class="btn" onclick="selectService('Waste Management',0)">Choose</button>
   </div>
 
   <div class="card">
-    <h3>AI Safety Tips</h3>
-    <p>Digital awareness content</p>
-    <span class="tag">Free / Subscription</span>
-    <button class="btn" onclick="selectService('AI Safety Tips',0)">Choose</button>
+    <h3>Graphic Design</h3>
+    <button class="btn" onclick="selectService('Graphic Design',5000)">Choose</button>
   </div>
 </div>
 
   </div>
 </section><section>
   <div class="box">
-    <h2>Booking Form</h2><p><strong>Selected Service:</strong> <span id="serviceName">None</span></p>
-<p><strong>Amount:</strong> ₦<span id="amount">0</span></p>
+    <h2>Booking Form</h2><p><b>Selected:</b> <span id="serviceName">None</span></p>
+<p><b>Amount:</b> ₦<span id="amount">0</span></p>
 
-<label>Full Name</label>
-<input type="text" id="name" placeholder="Enter your name" />
+<input id="name" placeholder="Full Name" />
+<input id="phone" placeholder="Phone" />
+<input id="email" placeholder="Email" />
 
-<label>Phone Number</label>
-<input type="text" id="phone" placeholder="Enter phone number" />
-
-<label>Email Address</label>
-<input type="text" id="email" placeholder="Enter email" />
-
-<button class="btn btn-green" onclick="proceed()">Proceed to Payment</button>
+<button class="btn btn-green" onclick="proceed()">Submit Request</button>
 
   </div>
 </section><section>
   <div class="box">
-    <h2>Payment Details</h2>
-    <p><strong>Bank:</strong> Fidelity Bank</p>
-    <p><strong>Account Name:</strong> EBIKLEAN GLOBAL</p>
-    <p><strong>Account Number:</strong> 5601698668</p><p id="payText">Select a service to see payment details.</p>
-
+    <h2>Payment</h2>
+    <p>Fidelity Bank</p>
+    <p>EBIKLEAN GLOBAL</p>
+    <p>5601698668</p>
   </div>
+</section><section class="admin" id="adminPanel">
+  <h2>Admin Dashboard</h2>
+  <div id="adminData"></div>
 </section><footer>
   <p>© 2026 Ebiklean Global</p>
+  <button class="small-btn" onclick="openAdmin()">Admin</button>
 </footer><a class="whatsapp" id="wa" target="_blank">💬</a>
 
 <script>
-let selectedService = '';
-let selectedAmount = 0;
 
-function selectService(name, amount){
-  selectedService = name;
-  selectedAmount = amount;
+// 🔥 CLOUD ENDPOINT (YOU WILL REPLACE THIS)
+const API_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
 
-  document.getElementById('serviceName').innerText = name;
-  document.getElementById('amount').innerText = amount;
+let selectedService='';
+let selectedAmount=0;
 
-  document.getElementById('payText').innerText = "Proceed to payment of selected service.";
+function selectService(name,amount){
+  selectedService=name;
+  selectedAmount=amount;
+
+  document.getElementById('serviceName').innerText=name;
+  document.getElementById('amount').innerText=amount;
+
+  alert(name + " selected");
 }
 
-function proceed(){
-  let name = document.getElementById('name').value;
-  let phone = document.getElementById('phone').value;
+async function proceed(){
 
-  if(!selectedService){
-    alert("Please select a service");
-    return;
-  }
+  let name=document.getElementById('name').value;
+  let phone=document.getElementById('phone').value;
+  let email=document.getElementById('email').value;
 
-  let ref = 'EBK' + Math.floor(Math.random()*1000000);
+  if(!selectedService){alert("Select service");return;}
 
-  let msg = `Hello, I am ${name}. I want ${selectedService}. Amount: ${selectedAmount}. Ref: ${ref}`;
+  let ref='EBK'+Math.floor(Math.random()*1000000);
 
-  let url = `https://wa.me/2347031204549?text=${encodeURIComponent(msg)}`;
+  let data={
+    name,
+    phone,
+    email,
+    service:selectedService,
+    amount:selectedAmount,
+    ref,
+    time:new Date().toLocaleString()
+  };
 
-  document.getElementById('wa').href = url;
+  // 📡 SEND TO CLOUD DATABASE (Google Sheets via Apps Script)
+  try{
+    await fetch(API_URL,{method:"POST",body:JSON.stringify(data)});
+  }catch(e){console.log("Cloud save failed",e);}
+
+  let msg=`Hello, I am ${name}. Service: ${selectedService}. Ref:${ref}`;
+  let url=`https://wa.me/2347031204549?text=${encodeURIComponent(msg)}`;
+
+  document.getElementById('wa').href=url;
   window.open(url,'_blank');
 }
+
+// 🔐 ADMIN SYSTEM (CLOUD FETCH)
+async function openAdmin(){
+
+  let pass=prompt("Enter Admin Password");
+  if(pass!="EBKADMIN2026"){alert("Wrong password");return;}
+
+  let panel=document.getElementById('adminPanel');
+  panel.style.display="block";
+
+  let res = await fetch(API_URL);
+  let data = await res.json();
+
+  let html="";
+
+  data.forEach(d=>{
+    html+=`
+    <div class='admin-item'>
+      <b>${d.name}</b><br>
+      ${d.service} - ₦${d.amount}<br>
+      ${d.phone} | ${d.email}<br>
+      Ref: ${d.ref}<br>
+      ${d.time}
+    </div>`;
+  });
+
+  document.getElementById('adminData').innerHTML=html;
+}
+
 </script></body>
 </html>

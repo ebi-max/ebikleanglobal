@@ -2,52 +2,147 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Business Registration Portal</title>
+  <title>Ebiklean Global</title>
   <style>
     body { font-family: Arial, sans-serif; margin:0; background:#f4f6f8; color:#1f2937; }
-    header { background:linear-gradient(135deg,#0f172a,#1e3a8a); color:#fff; padding:80px 20px; text-align:center; }
-    header h1 { margin:0; font-size:2.5rem; }
-    section { max-width:900px; margin:auto; padding:40px 20px; }
-    .card { background:#fff; padding:25px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); margin-bottom:20px; }
-    h2 { color:#0f172a; }
-    .btn { display:inline-block; padding:12px 25px; background:#1e3a8a; color:#fff; text-decoration:none; border-radius:25px; font-weight:bold; margin-top:15px; }
-    footer { text-align:center; padding:30px; background:#0f172a; color:#fff; }
-    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:15px; border-radius:50%; text-decoration:none; }
+    header { background:linear-gradient(135deg,#0f172a,#1e3a8a); color:#fff; padding:60px 20px; text-align:center; }
+    header h1 { margin:0; font-size:2.4rem; }
+    header p { margin-top:10px; max-width:800px; margin-left:auto; margin-right:auto; }section { max-width:1000px; margin:auto; padding:30px 20px; }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:15px; }
+
+.card { background:#fff; padding:20px; border-radius:14px; box-shadow:0 8px 20px rgba(0,0,0,0.08); }
+
+h2 { color:#0f172a; }
+
+.btn { display:inline-block; padding:12px 18px; background:#1e3a8a; color:#fff; border:none; border-radius:20px; cursor:pointer; margin-top:10px; text-decoration:none; }
+
+.btn-green { background:#16a34a; }
+
+.tag { display:inline-block; background:#e2e8f0; padding:5px 10px; border-radius:20px; font-size:12px; margin-top:8px; }
+
+.box { background:#fff; padding:20px; border-radius:14px; margin-top:15px; box-shadow:0 8px 20px rgba(0,0,0,0.06); }
+
+footer { text-align:center; padding:30px; background:#0f172a; color:#fff; }
+
+.whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:15px; border-radius:50%; text-decoration:none; font-size:20px; }
+
+select, input { width:100%; padding:10px; margin-top:8px; border-radius:8px; border:1px solid #ccc; }
+
+.hidden { display:none; }
+
   </style>
 </head>
 <body><header>
-  <h1>Business Registration Portal</h1>
-  <p>Use this platform to submit your business information for CAC or NGO registration. Follow the steps below.</p>
+  <h1>Ebiklean Global</h1>
+  <p>Business registration, cleaning services, laundry, waste management, and digital support services in one platform.</p>
 </header><section>
+  <div class="box">
+    <h2>Select a Service</h2><div class="grid">
   <div class="card">
-    <h2>Step 1: Submit Your Details</h2>
-    <p>Fill in your correct business information using the form below.</p>
-    <a href="https://forms.gle/dcN7bSs96CpTWSAQA" target="_blank" class="btn">Start Registration</a>
+    <h3>CAC Registration</h3>
+    <p>Business registration with CAC</p>
+    <span class="tag">₦10,000</span>
+    <button class="btn" onclick="selectService('CAC Registration',10000)">Choose</button>
+  </div>
+
+  <div class="card">
+    <h3>NGO Registration</h3>
+    <p>Non-profit registration</p>
+    <span class="tag">₦35,000</span>
+    <button class="btn" onclick="selectService('NGO Registration',35000)">Choose</button>
+  </div>
+
+  <div class="card">
+    <h3>Interior Cleaning</h3>
+    <p>Home & office cleaning</p>
+    <span class="tag">Custom Price</span>
+    <button class="btn" onclick="selectService('Interior Cleaning',0)">Choose</button>
+  </div>
+
+  <div class="card">
+    <h3>Laundry Services</h3>
+    <p>Washing & ironing</p>
+    <span class="tag">Affordable</span>
+    <button class="btn" onclick="selectService('Laundry Services',0)">Choose</button>
+  </div>
+
+  <div class="card">
+    <h3>Waste Management</h3>
+    <p>Environmental services</p>
+    <span class="tag">Eco-friendly</span>
+    <button class="btn" onclick="selectService('Waste Management',0)">Choose</button>
+  </div>
+
+  <div class="card">
+    <h3>AI Safety Tips</h3>
+    <p>Digital awareness content</p>
+    <span class="tag">Free / Subscription</span>
+    <button class="btn" onclick="selectService('AI Safety Tips',0)">Choose</button>
+  </div>
+</div>
+
   </div>
 </section><section>
-  <div class="card">
-    <h2>Step 2: Select Registration Type</h2>
-    <ul>
-      <li>CAC Registration – ₦10,000</li>
-      <li>NGO Registration – ₦35,000</li>
-    </ul>
-    <p>Optional: Business Website – ₦5,000 (if needed)</p>
+  <div class="box">
+    <h2>Booking Form</h2><p><strong>Selected Service:</strong> <span id="serviceName">None</span></p>
+<p><strong>Amount:</strong> ₦<span id="amount">0</span></p>
+
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name" />
+
+<label>Phone Number</label>
+<input type="text" id="phone" placeholder="Enter phone number" />
+
+<label>Email Address</label>
+<input type="text" id="email" placeholder="Enter email" />
+
+<button class="btn btn-green" onclick="proceed()">Proceed to Payment</button>
+
   </div>
 </section><section>
-  <div class="card">
-    <h2>Step 3: Make Payment</h2>
+  <div class="box">
+    <h2>Payment Details</h2>
     <p><strong>Bank:</strong> Fidelity Bank</p>
     <p><strong>Account Name:</strong> EBIKLEAN GLOBAL</p>
-    <p><strong>Account Number:</strong> 5601698668</p>
-  </div>
-</section><section>
-  <div class="card">
-    <h2>Step 4: Send Payment Proof</h2>
-    <p>After payment, send proof via WhatsApp including your name.</p>
+    <p><strong>Account Number:</strong> 5601698668</p><p id="payText">Select a service to see payment details.</p>
+
   </div>
 </section><footer>
-  <p>Registration Processing Portal</p>
-</footer><a href="https://wa.me/2347031204549" class="whatsapp" target="_blank">💬</a>
+  <p>© 2026 Ebiklean Global</p>
+</footer><a class="whatsapp" id="wa" target="_blank">💬</a>
 
-</body>
+<script>
+let selectedService = '';
+let selectedAmount = 0;
+
+function selectService(name, amount){
+  selectedService = name;
+  selectedAmount = amount;
+
+  document.getElementById('serviceName').innerText = name;
+  document.getElementById('amount').innerText = amount;
+
+  document.getElementById('payText').innerText = "Proceed to payment of selected service.";
+}
+
+function proceed(){
+  let name = document.getElementById('name').value;
+  let phone = document.getElementById('phone').value;
+
+  if(!selectedService){
+    alert("Please select a service");
+    return;
+  }
+
+  let ref = 'EBK' + Math.floor(Math.random()*1000000);
+
+  let msg = `Hello, I am ${name}. I want ${selectedService}. Amount: ${selectedAmount}. Ref: ${ref}`;
+
+  let url = `https://wa.me/2347031204549?text=${encodeURIComponent(msg)}`;
+
+  document.getElementById('wa').href = url;
+  window.open(url,'_blank');
+}
+</script></body>
 </html>
